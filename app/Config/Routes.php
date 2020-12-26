@@ -46,6 +46,7 @@ $routes->group('api', ['namespace' => 'App\Controllers\Api'], function($routes)
 	$routes->resource('retribusiparkir',['controller' => 'RetribusiParkir']);
 	$routes->resource('terminal',['controller' => 'Terminal']);
 	$routes->resource('trayek',['controller' => 'Trayek']);
+	$routes->resource('jointrayek',['controller' => 'JoinTrayek']);
 });
 /**
  * --------------------------------------------------------------------

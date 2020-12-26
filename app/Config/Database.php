@@ -31,7 +31,7 @@ class Database extends \CodeIgniter\Database\Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'localhost',
+		'hostname' => 'xampp.localhost',
 		'username' => 'root',
 		'password' => '',
 		'database' => 'db_dishub',
