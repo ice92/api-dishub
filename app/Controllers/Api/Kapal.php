@@ -53,7 +53,8 @@ class Kapal extends ResourceController
                     'alamat'    => $json->alamat,
                     'bobot'     => $json->bobot,
                     'kapasitas' => $json->kapasitas,
-                    'jalur'     => $json->jalur
+                    'jalur'     => $json->jalur,
+                    'pelabuhan' => $json->pelabuhan
                 ]);
             } else {
                 
@@ -64,7 +65,8 @@ class Kapal extends ResourceController
                     'alamat'    => $this->request->getPost('alamat'),
                     'bobot'     => $this->request->getPost('bobot'),
                     'kapasitas' => $this->request->getPost('kapasitas'),
-                    'jalur'     => $this->request->getPost('jalur')
+                    'jalur'     => $this->request->getPost('jalur'),
+                    'pelabuhan' => $this->request->getPost('pelabuhan')
                 ]);
             
             }
@@ -96,7 +98,8 @@ class Kapal extends ResourceController
                     'alamat'    => $json->alamat,
                     'bobot'     => $json->bobot,
                     'kapasitas' => $json->kapasitas,
-                    'jalur'     => $json->jalur
+                    'jalur'     => $json->jalur,
+                    'pelabuhan' => $json->pelabuhan
                 ]);
 
             } else {

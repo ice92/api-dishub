@@ -19,6 +19,7 @@ class KapalModel extends Model
         'alamat',
         'bobot',
         'kapasitas',
-        'jalur'
+        'jalur',
+        'pelabuhan'
     ];
 }

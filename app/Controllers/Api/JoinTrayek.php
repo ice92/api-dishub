@@ -6,7 +6,7 @@ use CodeIgniter\RESTful\ResourceController;
 
 class JoinTrayek extends ResourceController
 {
-    protected $modelName = 'App\Models\JoinTrayekModel';
+    protected $modelName = 'App\Models\JumlahKendaraanModel';
     protected $format = 'json';
 
     /**

@@ -9,13 +9,13 @@ class CidomoModel extends Model
      */
     protected $table = "cidomo";
     protected $primaryKey = 'no_reg';
-
+    protected $protectFields=false;
     /**
      * allowed Field
      */
-    protected $allowedFields = [
-        'no_reg',
-        'pemilik',
-        'kecamatan'
-    ];
+    // protected $allowedFields = [
+    //     'no_reg',
+    //     'pemilik',
+    //     'kecamatan'
+    // ];
 }

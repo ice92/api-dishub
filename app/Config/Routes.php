@@ -47,6 +47,11 @@ $routes->group('api', ['namespace' => 'App\Controllers\Api'], function($routes)
 	$routes->resource('terminal',['controller' => 'Terminal']);
 	$routes->resource('trayek',['controller' => 'Trayek']);
 	$routes->resource('jointrayek',['controller' => 'JoinTrayek']);
+	$routes->resource('joinkeberangkatan',['controller' => 'JoinKeberangkatan']);
+	$routes->resource('joinretribusi',['controller' => 'RetribusiJoin']);
+	$routes->resource('pad',['controller' => 'Pad']);
+	$routes->resource('padl',['controller' => 'Padl']);
+	$routes->resource('statistikcidomo',['controller' => 'StatistikCidomo']);
 });
 /**
  * --------------------------------------------------------------------
