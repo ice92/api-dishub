@@ -18,11 +18,10 @@ class StatistikCidomo extends ResourceController
         
         $builder = $this->model->builder();
         return $this->respond([
-            'statusCode'    => 200,
-            'message'       => 'OK',
-            'title'         => 'Data Jumlah Cidomo',
+            'form'         => 'Data Jumlah Cidomo',
             'bulan'         => 'desember',
-            'data'          => $builder->select("kecamatan, tahun, count(*) AS jumlah",false)->groupby('kecamatan','tahun')->get()->getResult()
+            'satuan'          => 'Unit',
+            'data'          => $builder->select("kecamatan as elemen, count(*) AS jumlah",false)->groupby('kecamatan','tahun')->get()->getResult()
         ], 200);
     }    
 }
