@@ -4,9 +4,9 @@ namespace App\Controllers\Api;
 
 use CodeIgniter\RESTful\ResourceController;
 
-class StatistikCidomo extends ResourceController
+class StatistikPengujian extends ResourceController
 {
-    protected $modelName = 'App\Models\CidomoModel';
+    protected $modelName = 'App\Models\PengujianModel';
     protected $format = 'json';
 
     /**
@@ -18,10 +18,10 @@ class StatistikCidomo extends ResourceController
         
         $builder = $this->model->builder();
         return $this->respond([
-            'form'         => 'Jumlah Cidomo',
+            'form'         => 'Jumlah Kendaraan yang Diuji',
             'bulan'         => 'Desember',
             'satuan'        => 'Unit',
-            'data'          => $builder->select("kecamatan as elemen, count(*) AS jumlah, tahun",false)->groupby('kecamatan','tahun')->get()->getResult()
+            'data'          => $builder->select("jenis as elemen, jumlah, tahun",false)->groupby('tahun')->get()->getResult()
         ], 200);
     }
     public function show($tahun=null)
@@ -29,11 +29,11 @@ class StatistikCidomo extends ResourceController
         
         $builder = $this->model->builder();
         return $this->respond([
-            'form'         => 'Jumlah Cidomo',
+            'form'         => 'Jumlah Kendaraan yang Diuji',
             'tahun'         => $tahun,
             'bulan'         => 'Desember',
             'satuan'        => 'Unit',
-            'data'          => $builder->select("kecamatan as elemen, count(*) AS jumlah",false)->groupby('kecamatan')->where('tahun',$tahun)->get()->getResult()
+            'data'          => $builder->select("jenis as elemen, jumlah, ",false)->where('tahun',$tahun)->get()->getResult()
         ], 200);
     }
 }

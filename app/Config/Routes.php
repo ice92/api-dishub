@@ -52,6 +52,8 @@ $routes->group('api', ['namespace' => 'App\Controllers\Api'], function($routes)
 	$routes->resource('pad',['controller' => 'Pad']);
 	$routes->resource('padl',['controller' => 'Padl']);
 	$routes->resource('statistikcidomo',['controller' => 'StatistikCidomo']);
+	$routes->resource('statistikpengujian',['controller' => 'StatistikPengujian']);
+	$routes->resource('statistikkendaraan',['controller' => 'StatistikKendaraan']);
 });
 /**
  * --------------------------------------------------------------------
