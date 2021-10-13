@@ -21,7 +21,7 @@ class StatistikPengujian extends ResourceController
             'form'         => 'Jumlah Kendaraan yang Diuji',
             'bulan'         => 'Desember',
             'satuan'        => 'Unit',
-            'data'          => $builder->select("jenis as elemen, jumlah, tahun",false)->groupby('tahun')->get()->getResult()
+            'data'          => $builder->select("jenis as elemen, jumlah, tahun",false)->get()->getResult()
         ], 200);
     }
     public function show($tahun=null)

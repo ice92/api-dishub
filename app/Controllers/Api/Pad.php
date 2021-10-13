@@ -21,10 +21,24 @@ class Pad extends ResourceController
             'data'          => $this->model->orderBy('jenis_retribusi', 'DESC')->findAll()
         ], 200);
     }
+    // /**
+    //  * latest function
+    //  * @method get 
+    //  * @param id
+    //  */
+    // public function latest($tahun = null)
+    // {
+    //     echo('Helloo');
+    //     // return $this->respond([
+    //     //     'statusCode' => 200,
+    //     //     'message' => 'OK',
+    //     //     'data' => $this->model->where('tahun',$tahun)->orderBy('jenis_retribusi', 'DESC')->findAll()
+    //     // ], 200);
+    // }
     /**
      * show function
      * @method get 
-     * @param ID
+     * @param id
      */
     public function show($id = null)
     {

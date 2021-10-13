@@ -4,9 +4,9 @@ namespace App\Controllers\Api;
 
 use CodeIgniter\RESTful\ResourceController;
 
-class StatistikKendaraan extends ResourceController
+class StatistikPenumpangDermaga extends ResourceController
 {
-    protected $modelName = 'App\Models\KendaraanModel';
+    protected $modelName = 'App\Models\KeberangkatanModel';
     protected $format = 'json';
 
     /**
@@ -17,21 +17,21 @@ class StatistikKendaraan extends ResourceController
     {        
         $builder = $this->model->builder();
         return $this->respond([
-            'form'         => 'Jumlah Kendaraan Wajib Uji',
+            'form'         => 'Penumpang Melalui Terminal Tipe C',
             'bulan'         => 'Desember',
             'satuan'        => 'Unit',
-            'data'          => $builder->select("jenis as elemen, jumlah, tahun",false)->get()->getResult()
+            'data'          => $builder->select("nama as elemen, penumpang_in AS jumlah, tahun",false)->get()->getResult()
         ], 200);
     }
-    public function show($tahun=null)
+    public function show($data=null)
     {        
         $builder = $this->model->builder();
         return $this->respond([
-            'form'         => 'Jumlah Kendaraan Wajib Uji',
+            'form'         => 'Penumpang Melalui Terminal Tipe C',
             'tahun'         => $tahun,
             'bulan'         => 'Desember',
             'satuan'        => 'Unit',
-            'data'          => $builder->select("jenis as elemen, jumlah, ",false)->where('tahun',$tahun)->get()->getResult()
+            'data'          => $builder->select("nama as elemen, penumpang_out AS jumlah",false)->groupby('tahun')->get()->getResult()
         ], 200);
     }
 }
